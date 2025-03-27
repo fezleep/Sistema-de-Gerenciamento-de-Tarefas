@@ -1,6 +1,6 @@
 ## task_flow
 
-## Um sistema web para organizar tarefas, com:
+# Um sistema web para organizar tarefas, com:
 ✔ CRUD de tarefas (criar, editar, marcar como concluída).
 ✔ Autenticação (registro, login e logout).
 ✔ Filtros por data, prioridade e status.
