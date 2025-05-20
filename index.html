@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minha Lista de Tarefas</h1>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Digite uma tarefa...">
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        // JavaScript direto no HTML (simplicidade!)
+        const form = document.getElementById('task-form');
+        const taskInput = document.getElementById('task-input');
+        const taskList = document.getElementById('task-list');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita recarregar a página
+            const taskText = taskInput.value.trim();
+            
+            if (taskText) {
+                // Cria um novo item na lista
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                
+                // Botão para remover
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'X';
+                deleteBtn.onclick = function() {
+                    li.remove();
+                };
+                
+                li.appendChild(deleteBtn);
+                taskList.appendChild(li);
+                
+                taskInput.value = ''; // Limpa o input
+            }
+        });
+    </script>
+</body>
+</html>
